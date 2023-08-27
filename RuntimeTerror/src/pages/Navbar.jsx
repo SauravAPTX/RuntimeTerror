@@ -1,5 +1,6 @@
 import React from 'react'
 import {  Navbar,   NavbarBrand,   NavbarContent,   NavbarItem,   NavbarMenuToggle,  NavbarMenu,  NavbarMenuItem} from "@nextui-org/react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar=()=>{
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -15,6 +16,10 @@ const Navbar=()=>{
         "Help & Feedback",
         "Log Out",
       ];
+      const navigate = useNavigate();
+  function nav() {
+    navigate(`/SignUpLog`)
+  }
     return(
         <Navbar onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
@@ -46,7 +51,7 @@ const Navbar=()=>{
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link href={nav}>Login</Link>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">
