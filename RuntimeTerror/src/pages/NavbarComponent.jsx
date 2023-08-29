@@ -39,26 +39,34 @@ const NavbarComponent = () => {
             </i>
           </p>
         </NavbarBrand>
+        <NavbarContent className="flex gap-6 items-center ml-auto">
+          <NavbarItem>
+            <Link to="#" className="text-foreground">
+              Baby
+            </Link>
+          </NavbarItem>
+          <NavbarItem isActive>
+            <Link to="#" aria-current="page">
+              Toddler
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link to="#" className="text-foreground">
+              Kids
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link to="#" className="text-foreground">
+              Shoes
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link to="#" className="text-foreground">
+              Sale
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
       </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link to="#" className="text-foreground">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link to="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link to="#" className="text-foreground">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
