@@ -6,7 +6,8 @@ import {
   Link,
   Button,
   Card,
-  CardBody
+  CardBody,
+  CardHeader,
 } from "@nextui-org/react";
 
 function SignUpForm() {
