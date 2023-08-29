@@ -1,13 +1,11 @@
 import React from 'react'
-import Navbar from './NavbarComponent';
-import Subnavbar from './SubNavbar';
+import Navbar from '../pages/Navbar';
 
 const Homepage=() =>{
     return(
         <div>
-            <h1>HOME</h1>
+            <h1>home</h1>
         <Navbar/>
-        <Subnavbar/>
         </div>
     );
 }
