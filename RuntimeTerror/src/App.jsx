@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import AllRoutes from './components/AllRoutes'
-// import GlobalStyles from './components/GlobalStyles';
+import { useState } from "react";
+import "./App.css";
+import AllRoutes from "./components/AllRoutes";
+
 function App() {
-  const [count, setCount] = useState(0)
-  
-  return(
-      <>
-      {/* <GlobalStyles/> */}
+  const [idk, setIdk] = useState("");
+
+  return (
+    <div>
       <AllRoutes/>
-      </>
-    );
-  }
-  export default App;
+    </div>
+  );
+}
+
+export default App;
