@@ -1,7 +1,7 @@
 import React from "react";
 import {Badge, Avatar} from "@nextui-org/react";
 
-export default function App() {
+export default function Badges() {
   return (
     <Badge content="5" color="primary">
       <Avatar

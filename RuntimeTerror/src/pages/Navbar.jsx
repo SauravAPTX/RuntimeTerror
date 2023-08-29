@@ -1,8 +1,12 @@
 import React from 'react'
 import {  Navbar,   NavbarBrand,   NavbarContent,   NavbarItem,   NavbarMenuToggle,  NavbarMenu,  NavbarMenuItem} from "@nextui-org/react";
 import { Link, useNavigate } from "react-router-dom";
+import Badges from '../components/Badges';
+import Avatar from '../components/Avatar';
+import Avatars from '../components/Avatar';
 
-const Navbar=()=>{
+
+const Nav=()=>{
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const menuItems = [
         "Profile",
@@ -75,7 +79,11 @@ const Navbar=()=>{
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
+      <div>
+        <Badges/>
+        <Avatars/>
+      </div>
     </Navbar>
     )
 }
-export default Navbar;
+export default Nav;
