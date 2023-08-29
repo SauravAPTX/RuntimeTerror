@@ -38,15 +38,142 @@ const Subnavbar = () => {
               <DropdownItem key="Baby">Baby</DropdownItem>
               <DropdownItem key="Baby Boy">Baby Boy</DropdownItem>
               <DropdownItem key="Baby Girl">Baby Girl</DropdownItem>
-              <DropdownItem key="Baby Neutral">Baby Neutral</DropdownItem>
               <DropdownItem key="Baby Nursery & Gear">Baby Nursery & Gear</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </div>
-        <Divider orientation="vertical" />
-        <div>Docs</div>
-        <Divider orientation="vertical" />
-        <div>Source</div>
+        <Divider orientation="  " />
+        <div>
+        <Dropdown>
+            <DropdownTrigger>
+              <Button
+                variant="bordered"
+                className="capitalize"
+              >
+                {selectedValue}
+              </Button>
+            </DropdownTrigger>
+        <DropdownMenu
+              aria-label="Single selection example"
+              variant="flat"
+              disallowEmptySelection
+              selectionMode="single"
+              selectedKeys={selectedKeys}
+              onSelectionChange={setSelectedKeys}
+            >
+              <DropdownItem key="Toddler">Toddler</DropdownItem>
+              <DropdownItem key="Toddler Boy">Toddler Boy</DropdownItem>
+              <DropdownItem key="Toddler Girl">Toddler Girl</DropdownItem>
+         </DropdownMenu>
+         </Dropdown>
+        </div>
+        <Divider orientation="  " />
+        <div>
+        <Dropdown>
+            <DropdownTrigger>
+              <Button
+                variant="bordered"
+                className="capitalize"
+              >
+                {selectedValue}
+              </Button>
+            </DropdownTrigger>
+        <DropdownMenu
+              aria-label="Single selection example"
+              variant="flat"
+              disallowEmptySelection
+              selectionMode="single"
+              selectedKeys={selectedKeys}
+              onSelectionChange={setSelectedKeys}
+            >
+              <DropdownItem key="Kid">Kid</DropdownItem>
+              <DropdownItem key="Boy">Boy</DropdownItem>
+              <DropdownItem key="Girl">Girl</DropdownItem>
+         </DropdownMenu>
+         </Dropdown>
+        </div>
+        <Divider orientation="  " />
+        <div>
+        <Dropdown>
+            <DropdownTrigger>
+              <Button
+                variant="bordered"
+                className="capitalize"
+              >
+                {selectedValue}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+              aria-label="Single selection example"
+              variant="flat"
+              disallowEmptySelection
+              selectionMode="single"
+              selectedKeys={selectedKeys}
+              onSelectionChange={setSelectedKeys}
+            >
+              <DropdownItem key="New & Popular">New & Popular</DropdownItem>
+              <DropdownItem key="Just Arrived">Just Arrivedy</DropdownItem>
+              <DropdownItem key="Halloween Shop">Halloween Shopl</DropdownItem>
+              <DropdownItem key="Family Matching Moments">Family Matching Moments</DropdownItem>
+              <DropdownItem key="Basics">Basics</DropdownItem>
+              <DropdownItem key="Little Planet">Little Planets</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </div>
+        <Divider orientation="  " />
+        <div>
+        <Dropdown>
+            <DropdownTrigger>
+              <Button
+                variant="bordered"
+                className="capitalize"
+              >
+                {selectedValue}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+              aria-label="Single selection example"
+              variant="flat"
+              disallowEmptySelection
+              selectionMode="single"
+              selectedKeys={selectedKeys}
+              onSelectionChange={setSelectedKeys}
+            >
+              <DropdownItem key="Shoes">Shoes</DropdownItem>
+              <DropdownItem key="Baby Girl">Baby Girl (0-6)</DropdownItem>
+              <DropdownItem key="Baby Boy">Baby Boy (0-6)</DropdownItem>
+              <DropdownItem key="Kid Girl">Kid Girl (13-4Y)</DropdownItem>
+              <DropdownItem key="Kid Boy">Kid Boy (13-4Y)</DropdownItem>
+              <DropdownItem key="Toddler">Toddler (4-12)</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>  
+        </div>
+        <Divider orientation="  "/>
+        <div>
+          <Dropdown>
+          <DropdownTrigger>
+              <Button
+                variant="bordered"
+                className="capitalize"
+              >
+                {selectedValue}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+              aria-label="Single selection example"
+              variant="flat"
+              disallowEmptySelection
+              selectionMode="single"
+              selectedKeys={selectedKeys}
+              onSelectionChange={setSelectedKeys}
+            >
+              <DropdownItem key="Sale">Sale</DropdownItem>
+              <DropdownItem key="Buy 1, Get 2 Free Denim">Buy 1, Get 2 Free Denim</DropdownItem>
+              <DropdownItem key="Doorbusters">Doorbusters</DropdownItem>
+              <DropdownItem key="Clearance">Clearance</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </div>
       </div>
     </div>
   );
