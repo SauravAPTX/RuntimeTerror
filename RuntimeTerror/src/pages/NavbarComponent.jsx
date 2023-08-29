@@ -65,6 +65,11 @@ const NavbarComponent = () => {
               Sale
             </Link>
           </NavbarItem>
+          <NavbarItem>
+          <button>
+            <a href='/SignUpLog'>Login</a>
+          </button>
+          </NavbarItem>
         </NavbarContent>
       </NavbarContent>
 
