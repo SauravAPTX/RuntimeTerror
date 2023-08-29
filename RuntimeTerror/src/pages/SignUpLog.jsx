@@ -21,13 +21,8 @@ function SignUpForm() {
 
 
   const handleSignUpClick = () => {
-    // Logic to process the inputArray, like sending it to a server
     console.log(inputArray);
   };
-
-// export default function App() {
-//   const [selected, setSelected] = React.useState("login");
-
   return (
     
     <form className="flex flex-col gap-4 h-[300px]">
@@ -35,22 +30,22 @@ function SignUpForm() {
         isRequired
         label="Name"
         placeholder="Enter your name"
-        type="text" // Change this to "text" instead of "password"
-        onChange={(e) => handleInputChange(0, e.target.value)} // Use index 0 for the name field
+        type="text" 
+        onChange={(e) => handleInputChange(0, e.target.value)} 
       />
       <Input
         isRequired
         label="Email"
         placeholder="Enter your email"
         type="email"
-        onChange={(e) => handleInputChange(1, e.target.value)} // Use index 1 for the email field
+        onChange={(e) => handleInputChange(1, e.target.value)}
       />
       <Input
         isRequired
         label="Password"
         placeholder="Enter your password"
         type="password"
-        onChange={(e) => handleInputChange(2, e.target.value)} // Use index 2 for the password field
+        onChange={(e) => handleInputChange(2, e.target.value)}
       />
       <p className="text-center text-small">
         Already have an account?{" "}
@@ -80,10 +75,8 @@ function LoginForm() {
 
       if (response.data.length > 0) {
         setLoginMessage("Congratulations! Login successful.");
-        // You can perform further actions upon successful login
       } else {
         setLoginMessage("Login failed: Invalid credentials");
-        // You can display an error message to the user
       }
     } catch (error) {
       console.error("Error during login:", error);
