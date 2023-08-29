@@ -38,7 +38,6 @@ const Subnavbar = () => {
               <DropdownItem key="Baby">Baby</DropdownItem>
               <DropdownItem key="Baby Boy">Baby Boy</DropdownItem>
               <DropdownItem key="Baby Girl">Baby Girl</DropdownItem>
-              <DropdownItem key="Baby Neutral">Baby Neutral</DropdownItem>
               <DropdownItem key="Baby Nursery & Gear">Baby Nursery & Gear</DropdownItem>
             </DropdownMenu>
           </Dropdown>
@@ -141,11 +140,11 @@ const Subnavbar = () => {
               onSelectionChange={setSelectedKeys}
             >
               <DropdownItem key="Shoes">Shoes</DropdownItem>
-              <DropdownItem key="Baby Girl (0-6)">Baby Girl (0-6)</DropdownItem>
-              <DropdownItem key="Baby Boy (0-6)">Baby Boy (0-6)</DropdownItem>
-              <DropdownItem key="Kid Girl (13-4Y)">Kid Girl (13-4Y)</DropdownItem>
-              <DropdownItem key="Kid Boy (13-4Y)">Kid Boy (13-4Y)</DropdownItem>
-              <DropdownItem key="Toddler (4-12)">Toddler (4-12)</DropdownItem>
+              <DropdownItem key="Baby Girl">Baby Girl (0-6)</DropdownItem>
+              <DropdownItem key="Baby Boy">Baby Boy (0-6)</DropdownItem>
+              <DropdownItem key="Kid Girl">Kid Girl (13-4Y)</DropdownItem>
+              <DropdownItem key="Kid Boy">Kid Boy (13-4Y)</DropdownItem>
+              <DropdownItem key="Toddler">Toddler (4-12)</DropdownItem>
             </DropdownMenu>
           </Dropdown>  
         </div>
