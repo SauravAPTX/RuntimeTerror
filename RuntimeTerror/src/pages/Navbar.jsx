@@ -2,7 +2,7 @@ import React from 'react'
 import {  Navbar,   NavbarBrand,   NavbarContent,   NavbarItem,   NavbarMenuToggle,  NavbarMenu,  NavbarMenuItem} from "@nextui-org/react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar=()=>{
+const navbar=()=>{
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const menuItems = [
         "Profile",
@@ -78,4 +78,4 @@ const Navbar=()=>{
     </Navbar>
     )
 }
-export default Navbar;
+export default navbar;
