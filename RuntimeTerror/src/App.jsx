@@ -6,10 +6,9 @@ function App() {
   const [idk, setIdk] = useState("");
 
   return (
-    <>
-    
+    <div>
       <AllRoutes/>
-    </>
+    </div>
   );
 }
 
