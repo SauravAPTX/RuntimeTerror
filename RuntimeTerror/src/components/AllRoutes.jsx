@@ -12,7 +12,7 @@ import SignUplogIn from "../pages/SignUpLog"
         <Routes>
             <Route path="/" element={<Homepage/>}></Route>
             <Route path="/Products" element={<Products/>}></Route>
-            <Route path="/products/:id" element={<SingleProductPage/>}></Route>
+            <Route path="/Products/:id" element={<SingleProductPage/>}></Route>
             <Route path="/Wishlist" element={<Wishlist/>}></Route>
             <Route path="/Cart" element={<Cart/>}></Route>
             <Route path="/Profile" element={<Profile/>}></Route>
