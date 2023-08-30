@@ -7,7 +7,6 @@ import Cart from "../pages/Cart"
 import Wishlist from "../pages/Wishlist"
 import Profile from "../pages/Profile"
 import SignUplogIn from "../pages/SignUpLog"
-import Header from "../pages/header";
  const AllRoutes= ()=> {
     return (
         <Routes>
@@ -18,7 +17,6 @@ import Header from "../pages/header";
             <Route path="/Cart" element={<Cart/>}></Route>
             <Route path="/Profile" element={<Profile/>}></Route>
             <Route path="/SignUpLogIn" element={<SignUplogIn/>}></Route>
-            <Route path="/Header" element={<Header/>}></Route>
         </Routes>
     )
 }
