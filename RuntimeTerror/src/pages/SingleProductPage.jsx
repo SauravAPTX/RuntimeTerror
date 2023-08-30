@@ -1,6 +1,7 @@
 import React ,{useEffect, useState}from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 import { useParams } from "react-router";
+import "../style/SingleProductPage.css";
 
 const SingleProductPage = () => {
   const api="http://localhost:3000/products";
@@ -31,21 +32,26 @@ const SingleProductPage = () => {
     }
   };
   return (
-    <Card className="py-4">
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-large">{productData.title}</h4>
-        <small className="text-default-500">${productData.price}</small>
-      </CardHeader>
-      <CardBody className="overflow-visible py-2">
-        <Image
-          alt="Card background"
-          className="object-cover rounded-xl"
-          src={productData.image}
-          width={270}
-        />
-        <button onClick={handleAddToCart}className='btn btn-primary'>Add to Cart</button>
-      </CardBody>
-    </Card>
+    <Card className="product-card">
+  <CardHeader className="product-header">
+    <h4 className="product-title">{productData.title}</h4>
+    <small className="product-price">${productData.price}</small>
+  </CardHeader>
+  <CardBody className="product-body">
+    <div className="product-image-container">
+      <Image
+        alt="Product"
+        className="product-image"
+        src={productData.image}
+        width={270}
+      />
+    </div>
+    <p className="product-description">{productData.description}</p>
+    <button onClick={handleAddToCart} className="add-to-cart-button">
+      Add to Cart
+    </button>
+  </CardBody>
+</Card>
   );
 }
 export default SingleProductPage;
