@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import '../style/Login.css'; 
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import "../style/Login.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -20,28 +20,25 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await axios.get('http://localhost:3000/users');
+      const response = await axios.get("http://localhost:3000/users");
       const users = response.data;
 
-      const user = users.find((user) => user.email === email && user.password === password);
+      const user = users.find(
+        (user) => user.email === email && user.password === password
+      );
 
-      if (user)
-       {
-        alert('Login successful!');
-        navigate('../home');
-       } 
-       else 
-       {
-        alert('Invalid email or password. Please try again.');
-       }
-    } 
-    catch (error) 
-    {
-      console.error('Login error:', error);
+      if (user) {
+        alert("Login successful!");
+        navigate("../home");
+      } else {
+        alert("Invalid email or password. Please try again.");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
     }
 
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log("Email:", email);
+    console.log("Password:", password);
   };
 
   return (
@@ -68,13 +65,19 @@ function Login() {
           />
         </div>
         <button type="submit" className="submit-button">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  Log In
-</button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Log In
+        </button>
       </form>
+      <div>
+        <p>
+          <b style={{ color: "white" }}>Don't have an account?</b>
+          <Link to="/Signup">Sign up</Link>
+        </p>
+      </div>
     </div>
   );
 }

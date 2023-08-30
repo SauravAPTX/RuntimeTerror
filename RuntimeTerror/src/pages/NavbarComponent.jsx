@@ -49,7 +49,7 @@ const NavbarComponent = ({searchbtn}) => {
                     <Link to='/' className='link'>Home</Link>
                 </li>
                 <li>
-                    <Link to='/products'className='link'>Product</Link>
+                    <Link to='/Products'className='link'>Products</Link>
                 </li>
                 <li>
                     <Link to='/about'className='link'>About</Link>
