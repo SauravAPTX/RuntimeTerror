@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../style/Login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -71,13 +72,13 @@ function Login() {
           <span></span>
           Log In
         </button>
+        <div>
+          <p>
+            <b style={{ color: "white" }}>Don't have an account?</b>
+            <Link to="/Signup">Sign up</Link>
+          </p>
+        </div>
       </form>
-      <div>
-        <p>
-          <b style={{ color: "white" }}>Don't have an account?</b>
-          <Link to="/Signup">Sign up</Link>
-        </p>
-      </div>
     </div>
   );
 }
