@@ -9,7 +9,7 @@ const Homepage=() =>{
     return(
         <div>
         <NavbarComponent/>
-        <Avatar/>
+        <Products/>
         <Footer/>
         </div>
     );
