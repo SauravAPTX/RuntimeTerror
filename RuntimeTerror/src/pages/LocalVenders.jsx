@@ -9,6 +9,7 @@ import {
   CardBody,
   CardHeader,
 } from "@nextui-org/react";
+import '../styles/Login.css';
 
 function SignUpForm() {
   const [inputArray, setInputArray] = useState([]);

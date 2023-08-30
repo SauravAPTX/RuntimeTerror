@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import '../styles/Login.css';
+
 
 function PaymentForm() {
   const [cardNumber, setCardNumber] = useState('');
