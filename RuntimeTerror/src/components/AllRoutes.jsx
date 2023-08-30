@@ -7,6 +7,7 @@ import Cart from "../pages/Cart"
 import Wishlist from "../pages/Wishlist"
 import Profile from "../pages/Profile"
 import Login from "../pages/Login";
+import Signup from "../pages/SignUp";
 
  const AllRoutes= ()=> {
     return (
@@ -18,8 +19,8 @@ import Login from "../pages/Login";
             <Route path="/Cart" element={<Cart/>}></Route>
             <Route path="/Profile" element={<Profile/>}></Route>
             <Route path="/Login" element={<Login/>}></Route>
-
-        </Routes>
+            <Route path="/SignUp" element={<Signup/>}></Route>
+            </Routes>
     )
 }
 export default AllRoutes;
