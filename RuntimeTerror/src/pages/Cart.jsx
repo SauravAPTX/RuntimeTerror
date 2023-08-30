@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { SingleProduct } from '../components/SingleProduct';
 import './Products.css';
 import { useNavigate } from 'react-router-dom';
+import SingleCart from '../components/SingleCart';
 
 const Cart = () => {
     const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Cart = () => {
       <h1>Your Shopping Cart</h1>
       <div className="cart-items">
       {products.map((product) => (
-            <SingleProduct  {...product}/>
+            <SingleCart key={product.id} {...product} />
           ))}
       </div>
       <div className="cart-total">
