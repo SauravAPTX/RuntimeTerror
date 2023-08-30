@@ -1,60 +1,90 @@
 
-.navbar-container {
-    background-color: #333; 
-    color: white; 
-    padding: 10px 20px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: left; 
-  }
-  
-  
-  .navbar-brand {
-    font-size: 1.5rem;
-  }
-  
-  
-  .navbar-item {
-    margin-right: 10px; 
-  }
-  
-  
-  .navbar-item.active a {
-    font-weight: bold;
-  }
-  
-  
-  .text-foreground {
-    color: rgb(74, 134, 160); 
-    text-decoration: none; 
-  }
-  
-  
-  .text-primary {
-    color: blue;
-  }
-  
-  
-  .text-danger {
-    color: red;
-  }
-  
-  
-  @media (max-width: 640px) {
-    .navbar-container {
-      padding: 10px; 
-    }
-  
-    .navbar-brand {
-      font-size: 1rem;
-    }
-  
-    .navbar-menu-toggle {
-      display: block;
-    }
-  
-    .navbar-content {
-      display: none;
-    }
-  }
-  
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.NavbarBrand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.NavbarMenu {
+  background-color: #333;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.NavbarMenuItem {
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+  display: block;
+}
+
+.NavbarMenuItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.NavbarItem {
+  margin-right: 20px;
+  position: relative;
+}
+
+.NavbarItem:last-child {
+  margin-right: 0;
+}
+
+.NavbarItem a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.NavbarItem a:hover {
+  color: lightgray;
+}
+
+.navbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.navbar-button.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.navbar-button.primary:hover {
+  background-color: #0056b3;
+}
+
+.navbar-button.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.navbar-button.danger:hover {
+  background-color: #a51c2e;
+}
