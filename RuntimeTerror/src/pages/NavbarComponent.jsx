@@ -42,7 +42,7 @@ export default function NavbarComponent() {
             <p className="font-bold text-inherit"></p>
           </NavbarBrand>
         </NavbarContent>
-
+      <label>
         <NavbarContent className="hidden sm:flex gap-6" justify="center">
           <NavbarItem>
             <Link color="foreground" href="#">
@@ -60,6 +60,7 @@ export default function NavbarComponent() {
             </Link>
           </NavbarItem>
         </NavbarContent>
+        </label>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
             <Link href="#">Login</Link>
