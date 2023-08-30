@@ -1,10 +1,10 @@
-footer.js;
 import React from "react";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { RiFacebookFill } from "react-icons/ri";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { BsYoutube } from "react-icons/bs";
-import "./footer.css";
+import "./Footer.css";
+import CarterLogo from "./CarterLogo";
 const Footer = () => {
   return (
     <>
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="container">
           <div className="about">
             <div className="logo">
-              <img src="https://th.bing.com/th/id/OIP.wgDfE7g7c6YW3NZSxqWPQAHaHa?pid=ImgDet&rs=1" alt="logo"></img>
+              <CarterLogo/>
             </div>
             <div className="detail">
               <div className="icon">
