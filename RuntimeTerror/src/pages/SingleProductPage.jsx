@@ -3,6 +3,7 @@ import { useParams } from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 
 const SingleProductPage = () => {
+  const api="http://localhost:3000/products";
   const {id}= useParams; //returns an object
   const [ProductData, setProductData] = useState({});
   useEffect(() => {
@@ -17,7 +18,7 @@ const SingleProductPage = () => {
   return (
     <Card className="py-4">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-large">yellowq{ProductData.title}</h4>
+        <h4 className="font-bold text-large">{ProductData.title}</h4>
         <small className="text-default-500">{ProductData.price}</small>
       </CardHeader>
       <CardBody className="overflow-visible py-2">

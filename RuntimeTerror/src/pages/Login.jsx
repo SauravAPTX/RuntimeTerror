@@ -20,7 +20,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await axios.get('http://localhost:5173/users');
+      const response = await axios.get('http://localhost:3000/users');
       const users = response.data;
 
       const user = users.find((user) => user.email === email && user.password === password);

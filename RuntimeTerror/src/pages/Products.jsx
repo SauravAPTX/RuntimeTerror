@@ -4,9 +4,17 @@ import './Products.css';
 
 const Products = () => {
     <div>Products</div>
-    const products=[
-      
-    ];
+    const api="http://localhost:3000/products";
+
+    const[products,setProducts]=useState([]);
+    useEffect(() => {
+        async function fetchD() {
+          let res = await fetch(api);
+          let data = await res.json();
+          setProducts(data);
+        }
+        fetchD();
+      }, []);
     return (
       <div>
         <h1>Products</h1>

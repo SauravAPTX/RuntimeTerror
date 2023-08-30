@@ -35,14 +35,14 @@ function Signup() {
 
     try {
       
-      const existingUserResponse = await axios.get(`http://localhost:5173/users?email=${email}`);
+      const existingUserResponse = await axios.get(`http://localhost:3000/users?email=${email}`);
 
       if (existingUserResponse.data.length > 0) {
         alert('This email is already registered. Please use a different email.');
         return; 
       }
 
-      const response = await axios.post('http://localhost:5173/users', {
+      const response = await axios.post('http://localhost:3000/users', {
         fullName,
         email,
         password
