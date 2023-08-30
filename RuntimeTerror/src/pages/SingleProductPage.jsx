@@ -35,7 +35,11 @@ const SingleProductPage = () => {
     <Card className="product-card">
   <CardHeader className="product-header">
     <h4 className="product-title">{productData.title}</h4>
-    <small className="product-price">${productData.price}</small>
+    <small className="product-price">Price=${productData.price}</small>
+        {/* <small className="text-default-500"> </small> */}
+        {/* <small className="text-default-500">
+          Rating={productData.rating.rate}({productData.rating.count})
+          </small> */}
   </CardHeader>
   <CardBody className="product-body">
     <div className="product-image-container">
