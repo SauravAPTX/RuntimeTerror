@@ -20,8 +20,7 @@ import Signup from "../pages/SignUp";
             <Route path="/Profile" element={<Profile/>}></Route>
             <Route path="/Login" element={<Login/>}></Route>
             <Route path="/SignUp" element={<Signup/>}></Route>
-
-        </Routes>
+            </Routes>
     )
 }
 export default AllRoutes;
