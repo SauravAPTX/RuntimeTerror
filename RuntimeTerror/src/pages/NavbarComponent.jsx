@@ -1,97 +1,76 @@
-import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  Button,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-} from "@nextui-org/react";
-import CarterLogo from "./CarterLogo";
+import React, { useState } from 'react'
+import { AiOutlineHeart } from 'react-icons/ai';
+import { BsBagCheck } from 'react-icons/bs';
+import { AiOutlineUser } from 'react-icons/ai';
+import { CiLogin } from 'react-icons/ci';
+import { CiLogout } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 import './NavbarComponents.css'
-
-export default function NavbarComponent() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
-
+import CarterLogo from './CarterLogo';
+const NavbarComponent = ({searchbtn}) => {
+    const [search, setSearch] = useState()
+    const { loginWithRedirect, logout, user, isAuthenticated} = useAuth0();
   return (
-    <div className="container">
-      <Navbar onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent>
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden"
-          />
-          <NavbarBrand>
-            <CarterLogo />
-            <p className="font-bold text-inherit"></p>
-          </NavbarBrand>
-        </NavbarContent>
-      <label>
-        <NavbarContent className="hidden sm:flex gap-6" justify="center">
-          <NavbarItem>
-            <Link color="foreground" href="#">
-              Features
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive>
-            <Link href="#" aria-current="page">
-              Customers
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="#">
-              Integrations
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-        </label>
-        <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
-              Sign Up
-            </Button>
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarMenu>
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                className="w-full"
-                href="#"
-                size="lg"
-              >
-                {item}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </NavbarMenu>
-      </Navbar>
+    <>
+    <div className='free'>
+            <div className='icon'>
+            </div>
     </div>
-  );
+    <div className='main_header'>
+        <div className='container'>
+            <div className='logo'>
+                <CarterLogo/>
+            </div>
+            <div className='icon'>
+                {
+                    isAuthenticated &&
+                    (
+                        <div className='account'>
+                        <div className='user_icon'>
+                        <AiOutlineUser />
+                        </div>
+                        <p>Hello, {user.name}</p>
+                    </div>
+                    )
+                }
+                <div className='second_icon'>
+                <Link to="/Wishlist" className='link'><AiOutlineHeart /></Link>
+                <Link to="/Cart" className='link'><BsBagCheck /></Link>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div className='header'>
+        <div className='container'>
+            <div className='nav'>
+            <ul>
+                <li>
+                    <Link to='/' className='link'>Home</Link>
+                </li>
+                <li>
+                    <Link to='/product'className='link'>Product</Link>
+                </li>
+                <li>
+                    <Link to='/about'className='link'>About</Link>
+                </li>
+                <li>
+                    <Link to='/contact'className='link'>contact</Link>
+                </li>
+            </ul>
+            </div>
+            <div className='auth'>
+                {
+                    isAuthenticated ?
+                    <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><CiLogout /></button>
+                    :
+                    <button onClick={() => loginWithRedirect()}><CiLogin /></button>
+                }
+            </div>
+        </div>
+    </div>
+    </>
+  )
 }
+
+export default NavbarComponent;
