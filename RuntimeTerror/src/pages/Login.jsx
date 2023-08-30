@@ -75,6 +75,9 @@ function Login() {
   Log In
 </button>
       </form>
+      <div>
+        <p><b style={{color: "white"}} >Don't have an account?</b><Link to="/Signup"></Link></p>
+    </div>
     </div>
   );
 }
