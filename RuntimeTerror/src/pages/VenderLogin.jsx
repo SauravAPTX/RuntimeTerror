@@ -6,9 +6,9 @@ import {
   Link,
   Button,
   Card,
-  CardBody
+  CardBody,
+  CardHeader,
 } from "@nextui-org/react";
-import '../styles/Login.css';
 
 function SignUpForm() {
   const [inputArray, setInputArray] = useState([]);
@@ -68,16 +68,23 @@ function LoginForm() {
   const [loginMessage, setLoginMessage] = useState("");
 
   const handleLoginClick = async () => {
-   if (email == "runtime@gmail.com" && password == 1234) {
-      setLoginMessage("Congratulations! You have successfully logged in.");
-    } else {
-      setLoginMessage("Error: Invalid email or password.");
+    try {
+      const response = await axios.get(
+        `http://localhost:3001/users?email=${email}&password=${password}`
+      );
+
+      if (response.data.length > 0) {
+        setLoginMessage("Congratulations! Login successful.");
+      } else {
+        setLoginMessage("Login failed: Invalid credentials");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
     }
   };
 
   return (
     <form className="flex flex-col gap-4">
-      <br/>
       <Input
         isRequired
         label="Email"
@@ -85,7 +92,7 @@ function LoginForm() {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-      /><br/>
+      />
       <Input
         isRequired
         label="Password"
@@ -93,13 +100,13 @@ function LoginForm() {
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-      /><br/>
-      {/* <p className="text-center text-small">
+      />
+      <p className="text-center text-small">
         Need to create an account?{" "}
         <Link size="sm" onPress={() => setSelected("sign-up")}>
           Sign up
         </Link>
-      </p> */}
+      </p>
       <div className="flex gap-2 justify-end">
         <Button fullWidth color="primary" onClick={handleLoginClick}>
           Login

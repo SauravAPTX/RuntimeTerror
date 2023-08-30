@@ -1,44 +1,35 @@
-// import React ,{useState}from "react";
-// import { useParams } from "react";
-// import {Card, CardFooter, Image, Button} from "@nextui-org/react";
-// const SingleProductPage=()=>{
-//   const[data,setData]=useState({})
-//   const {id}=useParams();
-//   console.log("x",id);
-//   const api="";
-//   async function fetchData(){
+import React ,{useState}from "react";
+import { useParams } from "react";
+import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 
-//     let res= await fetchData(`${api}/${id}`)
-//     let data1=await res.json();
-//     console.log(data1.data,"data");
-//     setData(data1.data,"data")
-
-//   }
-// }
-// fetchData() 
-//   return (
-//     <Box>
-//     <Card
-//       isFooterBlurred
-//       radius="lg"
-//       className="border-none"
-//     >
-//      <Image src={data.img} borderRadius="lg" />
-//       <Heading size="md">{data.brand}</Heading>
-//       <Text>{data.details}</Text>
-//       <Text color="blue.600" fontSize="2xl">
-//               {data.price}
-//             </Text>
-//       <CardFooter>
-//           <ButtonGroup spacing="2">
-//             <Button variant="solid" colorScheme="blue">
-//               Buy now
-//             </Button>
-//             {/* <Button onClick={nav} variant="ghost" colorScheme="blue">
-//               Details
-//             </Button> */}
-//           </ButtonGroup>
-//         </CardFooter>
-//     </Card>
-//     </Box>
-//   );
+const SingleProductPage = () => {
+  const {id}= useParams(); //returns an object
+  const [ProductData, setProductData] = useState({});
+  const api= "https://fakestoreapi.com/products";
+  useEffect(() => {
+  async function fetchD() {
+      let res = await fetch(`${api}/${id}`);
+      let data = await res.json();
+      setProductData(data);
+      console.log(data,"data");
+  }
+  fetchD();
+  }, []);
+  return (
+    <Card className="py-4">
+      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+        <h4 className="font-bold text-large">{ProductData.title}</h4>
+        <small className="text-default-500">{ProductData.price}</small>
+      </CardHeader>
+      <CardBody className="overflow-visible py-2">
+        <Image
+          alt="Card background"
+          className="object-cover rounded-xl"
+          src={ProductData.img}
+          width={270}
+        />
+      </CardBody>
+    </Card>
+  );
+}
+export default SingleProductPage;
