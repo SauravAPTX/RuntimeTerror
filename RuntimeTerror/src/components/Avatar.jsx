@@ -1,23 +1,35 @@
 import React from "react";
 import { Avatar } from "@nextui-org/react";
+import "./Avatar.css";
+
+const avatarsData = [
+  { type: "image", src: "https://img.freepik.com/free-photo/newborn-baby-enveloped-blue-scarf-sleeps-white-pillow_8353-848.jpg" },
+  { type: "name", name: "Baby Boy" },
+  { type: "image", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Kr0LfRypDs0dHXwAPbQ0SEsvUjR24Fyxh81sSmEOVteli-NylxgFHoj4cpXc69HyGoA&usqp=CAU" },
+  { type: "name", name: "Baby Girl" },
+  { type: "image", src: "https://images.unsplash.com/photo-1627639679690-db4d401aae84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHRvZGRsZXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80" },
+  { type: "name", name: "Toddler Boy" },
+  { type: "image", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPzniSPHlKPMYoYijh-HI27uFMrx37I5zm5g&usqp=CAU"},
+  { type: "name", name: "Toddler Boy" },
+  { type: "image", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNfbtLfrksrpuyr7hHY4IuZrTxYqv2gBxYuA&usqp=CAU" },
+  { type: "name", name: "Boy" },
+  { type: "image", src: "https://static.toiimg.com/photo/94857708.cms" },
+  { type: "name", name: "Girl" },
+];
 
 export default function Avatars() {
   return (
     <div className="Avatar-container">
       <div className="flex gap-6 items-center">
-        <Avatar src="https://img.freepik.com/free-photo/newborn-baby-enveloped-blue-scarf-sleeps-white-pillow_8353-848.jpg" style={{ width: '150px', height: 'auto' }} />
-        <Avatar name="Baby Boy" />
-        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Kr0LfRypDs0dHXwAPbQ0SEsvUjR24Fyxh81sSmEOVteli-NylxgFHoj4cpXc69HyGoA&usqp=CAU" style={{ width: '150px', height: 'auto' }} />
-        <Avatar name="Baby Girl" />
-        <Avatar src="https://images.unsplash.com/photo-1627639679690-db4d401aae84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHRvZGRsZXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80" style={{ width: '150px', height: 'auto' }} />
-        <Avatar name="Toddler Boy" />
-        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPzniSPHlKPMYoYijh-HI27uFMrx37I5zm5g&usqp=CAU" style={{ width: '150px', height: 'auto' }} />
-        <Avatar name="Toddler Girl" />
-        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNfbtLfrksrpuyr7hHY4IuZrTxYqv2gBxYuA&usqp=CAU" style={{ width: '150px', height: 'auto' }} />
-        <Avatar name="Boy" />
-        <Avatar src="https://static.toiimg.com/photo/94857708.cms" style={{ width: '150px', height: 'auto' }} />
-        <Avatar name="Girl" />
+        {avatarsData.map((avatar, index) => (
+          <Avatar
+            key={index}
+            src={avatar.type === "image" ? avatar.src : undefined}
+            name={avatar.type === "name" ? avatar.name : undefined}
+            style={{ width: '150px', height: '150px' }} 
+          />
+        ))}
       </div>
-    </div>
-  );
+  </div>
+  );
 }
