@@ -61,10 +61,13 @@ const NavbarComponent = ({searchbtn}) => {
             </div>
             <div className='auth'>
                 {
-                    isAuthenticated ?
+                    isAuthenticated ? (
                     <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><CiLogout /></button>
-                    :
+                    ):(
+                    <Link to="/Login" className='auth-link'>
                     <button onClick={() => loginWithRedirect()}><CiLogin /></button>
+                    </Link>
+                    )
                 }
             </div>
         </div>

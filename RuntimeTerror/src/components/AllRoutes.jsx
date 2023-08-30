@@ -6,7 +6,8 @@ import SingleProductPage from "../pages/SingleProductPage";
 import Cart from "../pages/Cart"
 import Wishlist from "../pages/Wishlist"
 import Profile from "../pages/Profile"
-import SignUplogIn from "../pages/SignUpLog"
+import Login from "../pages/Login";
+
  const AllRoutes= ()=> {
     return (
         <Routes>
@@ -16,7 +17,8 @@ import SignUplogIn from "../pages/SignUpLog"
             <Route path="/Wishlist" element={<Wishlist/>}></Route>
             <Route path="/Cart" element={<Cart/>}></Route>
             <Route path="/Profile" element={<Profile/>}></Route>
-            <Route path="/SignUpLogIn" element={<SignUplogIn/>}></Route>
+            <Route path="/Login" element={<Login/>}></Route>
+
         </Routes>
     )
 }

@@ -8,7 +8,7 @@ import {
   Card,
   CardBody
 } from "@nextui-org/react";
-import '../styles/Login.css';
+import '../style/Login.css';
 
 function SignUpForm() {
   const [inputArray, setInputArray] = useState([]);

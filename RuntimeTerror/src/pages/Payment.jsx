@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Login.css';
+import '../style/Login.css';
 
 
 function PaymentForm() {
