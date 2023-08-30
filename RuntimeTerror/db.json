@@ -662,5 +662,18 @@
     }
   ],
   "users": [],
-  "cart": []
+  "cart": [
+    {
+      "productId": 2,
+      "id": 1
+    },
+    {
+      "productId": 2,
+      "id": 2
+    },
+    {
+      "productId": "1",
+      "id": 3
+    }
+  ]
 }
