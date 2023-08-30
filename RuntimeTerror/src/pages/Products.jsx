@@ -38,33 +38,34 @@ const Products = () => {
   };
 
   const handleSort = (key) => {
-    let sortedProducts = [...filteredProducts];
-    if (key === 'price-low') {
-      sortedProducts.sort((a, b) => a.price - b.price);
-    } else if (key === 'price-high') {
-      sortedProducts.sort((a, b) => b.price - a.price);
-    } else {
-      sortedProducts.sort((a, b) => {
-        if (key === 'rating.rate') {
-          return b.rating.rate - a.rating.rate;
-        }
-        return a[key].localeCompare(b[key]);
-      });
-    }
-    setProducts(sortedProducts);
     setSortKey(key);
   };
 
+  const filteredAndPaginatedProducts = currentProducts
+  .filter(product => selectedCategory === '' || product.category === selectedCategory)
+  .sort((a, b) => {
+    if (sortKey === 'price-low') {
+      return a.price - b.price;
+    } else if (sortKey === 'price-high') {
+      return b.price - a.price;
+    } else if (sortKey === 'rating.rate') {
+      return b.rating.rate - a.rating.rate;
+    } else {
+      if (a[sortKey] < b[sortKey]) return -1;
+      if (a[sortKey] > b[sortKey]) return 1;
+      return 0;
+    }
+  });
   return (
     <div>
       <h1>Products</h1>
       <div className="controls">
-      <select value={sortKey} onChange={(e) => handleSort(e.target.value)}>
-  <option value="">Sort By</option>
-  <option value="price-low">Price: Low to High</option>
-  <option value="price-high">Price: High to Low</option>
-  <option value="rating.rate">Rating</option>
-</select>
+        <select value={sortKey} onChange={(e) => handleSort(e.target.value)}>
+          <option value="">Sort By</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating.rate">Rating</option>
+        </select>
         <select
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
@@ -80,7 +81,7 @@ const Products = () => {
         </select>
       </div>
       <div className="product-list">
-        {currentProducts.map((product) => (
+        {filteredAndPaginatedProducts.map((product) => (
           <div key={product.id} className="product-item">
             <SingleProduct {...product} />
           </div>
