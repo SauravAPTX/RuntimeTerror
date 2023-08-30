@@ -5,7 +5,7 @@ import "../style/SingleProduct.css";
 
 
 export const SingleProduct = (props) => {
-    const{id,title,image,price,description,category}=props;
+    const{id,title,image,price,description,category,rating}=props;
     const navigate = useNavigate();
     function nav() {
         navigate(`/products/${id}`)
@@ -30,7 +30,11 @@ export const SingleProduct = (props) => {
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
       <h3 className="font-bold text-large">{category}</h3>
         <h4 className="font-bold text-large">{title}</h4>
-        <small className="text-default-500">{price}</small>
+        <small className="text-default-500">Price=${price}</small>
+        <small className="text-default-500"> </small>
+        <small className="text-default-500">
+          Rating={rating.rate}({rating.count})
+          </small>
       </CardHeader>
       <CardBody className="overflow-visible py-2">
         <Image

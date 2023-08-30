@@ -8,6 +8,7 @@ import Wishlist from "../pages/Wishlist"
 import Profile from "../pages/Profile"
 import Login from "../pages/Login";
 import Signup from "../pages/SignUp";
+import Payment from "../pages/Payment"
 
  const AllRoutes= ()=> {
     return (
@@ -20,6 +21,7 @@ import Signup from "../pages/SignUp";
             <Route path="/Profile" element={<Profile/>}></Route>
             <Route path="/Login" element={<Login/>}></Route>
             <Route path="/SignUp" element={<Signup/>}></Route>
+            <Route path="/Payment" element={<Payment/>}></Route>
             </Routes>
     )
 }
