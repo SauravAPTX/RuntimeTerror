@@ -1,6 +1,5 @@
 import React from "react";
 import { Avatar } from "@nextui-org/react";
-import "./Avatar.css";
 
 const avatarsData = [
   { type: "image", src: "https://img.freepik.com/free-photo/newborn-baby-enveloped-blue-scarf-sleeps-white-pillow_8353-848.jpg" },
@@ -26,7 +25,7 @@ export default function Avatars() {
             key={index}
             src={avatar.type === "image" ? avatar.src : undefined}
             name={avatar.type === "name" ? avatar.name : undefined}
-            style={{ width: '150px', height: '150px' }} 
+            style={{ width: '275px', height: '183px' }} 
           />
         ))}
       </div>
