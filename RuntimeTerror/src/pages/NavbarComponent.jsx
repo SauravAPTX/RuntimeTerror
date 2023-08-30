@@ -9,6 +9,8 @@ import {
   NavbarMenuItem,
 } from '@nextui-org/react';
 import { Link } from 'react-router-dom';
+import CarterLogo from './CarterLogo';
+import "./NavbarComponents.css";
 
 const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -16,11 +18,7 @@ const NavbarComponent = () => {
     'Profile',
     'Dashboard',
     'Activity',
-    'Analytics',
-    'System',
-    'Deployments',
     'My Settings',
-    'Team Settings',
     'Help & Feedback',
     'Log Out',
   ];
@@ -33,38 +31,48 @@ const NavbarComponent = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit">
-            <i>
-              <b>CARTER</b>
-            </i>
-          </p>
+          <CarterLogo/>
+          <p className="font-bold text-inherit"></p>
         </NavbarBrand>
+        <NavbarContent className="flex gap-6 items-">
+          <NavbarItem>
+            <Link to="#" className="text-foreground">
+              Baby
+            </Link>
+          </NavbarItem>
+          <NavbarItem isActive>
+            <Link to="#" aria-current="page">
+              Toddler
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link to="#" className="text-foreground">
+              Kids
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link to="#" className="text-foreground">
+              Shoes
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link to="#" className="text-foreground">
+              Sale
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+          <button>
+            <a href='/SignUpLog'>Login</a>
+          </button>
+          </NavbarItem>
+        </NavbarContent>
       </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link to="#" className="text-foreground">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link to="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link to="#" className="text-foreground">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              to="#"
+              href="#"
               className={`w-full ${
                 index === 2
                   ? 'text-primary'
