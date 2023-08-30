@@ -64,7 +64,7 @@ const NavbarComponent = ({searchbtn}) => {
                     isAuthenticated ? (
                     <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><CiLogout /></button>
                     ):(
-                    <Link to="/SignUpLog" className='auth-link'>
+                    <Link to="/Login" className='auth-link'>
                     <button onClick={() => loginWithRedirect()}><CiLogin /></button>
                     </Link>
                     )
