@@ -56,7 +56,7 @@ function HeroSection() {
             <Image
               shadow="sm"
               radius="lg"
-              width="100%"
+              width="150px"
               alt={item.title}
               className="w-full object-cover h-[140px]"
               src={item.img}
