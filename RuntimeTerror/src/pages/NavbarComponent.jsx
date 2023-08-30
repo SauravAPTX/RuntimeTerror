@@ -8,8 +8,8 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from '@nextui-org/react';
-import { Link } from 'react-router-dom';
-import CarterLogo from './CarterLogo';
+import { Link } from 'react-router-dom'; 
+import  CarterLogo from './CarterLogo';
 import "./NavbarComponents.css";
 
 const NavbarComponent = () => {
