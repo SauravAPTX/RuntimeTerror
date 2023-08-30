@@ -1,90 +1,138 @@
-
-.Navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #333;
-  color: white;
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
 }
-
-.NavbarBrand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
+.free
+{
+    padding: 10px 30px;
+    width: 100%;
+    background: #010f1c;
+    display: flex;
 }
-
-.NavbarMenu {
-  background-color: #333;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  position: absolute;
-  top: 80px;
-  right: 20px;
-  width: 200px;
-  border-radius: 4px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+.free .icon
+{
+    color: #f3b123;
+    font-size: 32px;
 }
-
-.NavbarMenuItem {
-  padding: 10px 20px;
-  transition: background-color 0.3s ease-in-out;
-  display: block;
+.free p
+{
+    margin-left: 10px;
+    color: #f6f7f9;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
 }
-
-.NavbarMenuItem:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.main_header
+{
+    padding: 30px 40px;
+    width: 100%;
+    border-bottom: 1px solid #010f1c;
 }
-
-.NavbarItem {
-  margin-right: 20px;
-  position: relative;
+.main_header .container
+{
+    display: flex;
+    justify-content: space-between;
 }
-
-.NavbarItem:last-child {
-  margin-right: 0;
+.main_header .container .search_box
+{
+    margin-right: 30px;
 }
-
-.NavbarItem a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s ease-in-out;
+.main_header .container .search_box input
+{
+    outline: none;
+    padding: 10px 30px;
+    border: 3px solid #0989ff;
+    width: 300px;
+    color: #010f1c;
 }
-
-.NavbarItem a:hover {
-  color: lightgray;
+.main_header .container .search_box button
+{
+    border: 3px solid #0989ff;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #0989ff;
+    color: #ecf2f7;
 }
-
-.navbar-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 20px;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+.main_header .container .icon
+{
+    display: flex;
+    margin-right: 50px;
 }
-
-.navbar-button.primary {
-  background-color: #007bff;
-  color: white;
+.main_header .container .icon .account
+{
+    display: flex;
+    margin-right: 30px;
 }
-
-.navbar-button.primary:hover {
-  background-color: #0056b3;
+.main_header .container .icon .account .user_icon
+{
+    margin-right: 10px;
+    font-size: 22px;
+    color: #010f1c;
+    cursor: pointer;
 }
-
-.navbar-button.danger {
-  background-color: #dc3545;
-  color: white;
+.main_header .container .icon .account p
+{
+    margin-right: 5px;
+    margin-top: 2px;
 }
-
-.navbar-button.danger:hover {
-  background-color: #a51c2e;
+.main_header .container .icon .second_icon
+{
+    display: flex;
+}
+.main_header .container .icon .second_icon .link
+{
+    margin-right: 5px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #0989ff;
+}
+.header
+{
+    width: 100%;
+    padding: 20px 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.header .container
+{
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+}
+.header .container .nav ul
+{
+    display: flex;
+}
+.header .container .nav ul li
+{
+    margin-left: 20px;
+    list-style: none;
+}
+.header .container .nav ul li .link
+{
+    text-decoration: none;
+    color: #010f1c;
+    transition: 0.5s;
+}
+.header .container .nav ul li .link:hover
+{
+    color: #0989ff;
+}
+.header .container .auth
+{
+    margin-right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+.header .container .auth button
+{
+    margin-right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
 }
