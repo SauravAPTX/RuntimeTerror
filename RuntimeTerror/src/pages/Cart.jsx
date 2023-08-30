@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Cart = () => {
     const navigate = useNavigate();
     const handleCheckoutClick = () => {
-    navigate('/checkout');
+    navigate('/Payment');
     };
     <div>Products</div>
     const api="http://localhost:3000/cart";
