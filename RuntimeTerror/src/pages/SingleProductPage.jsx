@@ -3,9 +3,9 @@ import { useParams } from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 
 const SingleProductPage = () => {
-  const {id}= useParams(); //returns an object
+  const api="http://localhost:3000/products";
+  const {id}= useParams; //returns an object
   const [ProductData, setProductData] = useState({});
-  const api= "https://fakestoreapi.com/products";
   useEffect(() => {
   async function fetchD() {
       let res = await fetch(`${api}/${id}`);
