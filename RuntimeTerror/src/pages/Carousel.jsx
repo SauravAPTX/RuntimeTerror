@@ -45,7 +45,8 @@ import "./Carousel.css";
             <Image
               shadow="sm"
               radius="lg"
-              width="150px"
+              width="160px"
+              height="200px"
               alt={item.title}
               className="w-full object-cover h-[140px]"
               src={item.img}
