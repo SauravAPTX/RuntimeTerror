@@ -39,7 +39,7 @@ const NavbarComponent = ({searchbtn}) => {
                 <CarterLogo/>
             </div>
             <div className='search_box'>
-                <input type='text' value={search} placeholder='Search Your Product...' autoComplete='off' onChange={(e) => setSearch(e.target.value)}></input>
+                <input type='text' value={search} placeholder='Search Your Product...' autoComplete='on' onChange={(e) => setSearch(e.target.value)}></input>
                 <button onClick={() => searchbtn (search)}>Search</button>
             </div>
             <div className='icon'>
@@ -79,7 +79,7 @@ const NavbarComponent = ({searchbtn}) => {
                     <Link to='/about'className='link'>About</Link>
                 </li>
                 <li>
-                    <Link to='/contact'className='link'>contact</Link>
+                    <Link to='/Error'className='link'>contact</Link>
                 </li>
             </ul>
             </div>
