@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsBagCheck } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -8,7 +8,23 @@ import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import './NavbarComponents.css'
 import CarterLogo from './CarterLogo';
+import {Badge} from "@nextui-org/react";
 const NavbarComponent = ({searchbtn}) => {
+    const [sortKey, setSortKey] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const api = "http://localhost:3000/cart";
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      let res = await fetch(api);
+      let data = await res.json();
+      setProducts(data);
+    }
+    fetchProducts();
+  }, [sortKey, selectedCategory]);
+    const [isInvisible, setIsInvisible] = React.useState(false);
     const [search, setSearch] = useState()
     const { loginWithRedirect, logout, user, isAuthenticated} = useAuth0();
   return (
@@ -36,7 +52,11 @@ const NavbarComponent = ({searchbtn}) => {
                 }
                 <div className='second_icon'>
                 <Link to="/Wishlist" className='link'><AiOutlineHeart /></Link>
-                <Link to="/Cart" className='link'><BsBagCheck /></Link>
+                <Link to="/Cart" className='link'>
+                <Badge color="danger" content={products.length} isInvisible={isInvisible} shape="circle">
+             <BsBagCheck size={20} />
+             </Badge>
+                </Link>
                 </div>
             </div>
         </div>
