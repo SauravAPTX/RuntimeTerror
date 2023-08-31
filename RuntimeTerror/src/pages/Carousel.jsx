@@ -3,17 +3,6 @@ import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
 import "./Carousel.css";
 
 
-function HeroSection() {
-    return(
-        <div className='heroSection'>
-            <img src="https://th.bing.com/th/id/OIP.jde7OkDqcg3UZcYnNphRlAHaHa?pid=ImgDet&rs=1"></img>
-            <h1>Labour Day Sale</h1>
-            <h3>50%off on everything</h3>
-            <button>Shop Now</button>
-            </div>
-    )
-}
-
  function Carousel() {
   const list = [
     {
@@ -72,16 +61,5 @@ function HeroSection() {
   );
 }
 
-
-function HeroSections() {
-  return (
-    <div className="hero">
-      <h1>NEW BABY ESSENTIALS</h1>
-      <p>Upto 50% off on every product</p>
-      <button className="cta-button">Shop now</button>
-    </div>
-  );
-}
-
-export default Carousel;
+  export default Carousel;
  

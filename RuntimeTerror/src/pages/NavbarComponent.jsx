@@ -38,6 +38,10 @@ const NavbarComponent = ({searchbtn}) => {
             <div className='logo'>
                 <CarterLogo/>
             </div>
+            <div className='search_box'>
+                <input type='text' value={search} placeholder='Search Your Product...' autoComplete='off' onChange={(e) => setSearch(e.target.value)}></input>
+                <button onClick={() => searchbtn (search)}>Search</button>
+            </div>
             <div className='icon'>
                 {
                     isAuthenticated &&
