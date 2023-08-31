@@ -1,7 +1,7 @@
 import React from 'react';
-import Avatars from '../components/Avatar';
 import Carousel from './Carousel';
 import Imagepage from '../components/Image';
+import Example from './home';
 
 
 const Homepage=() =>{
@@ -9,7 +9,7 @@ const Homepage=() =>{
         <div>
           <Imagepage/>
           <Carousel/>
-          <Avatars/>  
+          <Example/>  
         </div>
     );
 }
