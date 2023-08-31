@@ -19,18 +19,30 @@ const SingleProductPage = () => {
   const handleAddToCart = async (event) => {
     event.preventDefault();
     try {
+      const dataToAdd = {
+        productId: id,
+        title: productData.title,
+        price: productData.price,
+        description: productData.description,
+        category: productData.category,
+        image: productData.image,
+        rating: productData.rating
+      };
+  
       await fetch("http://localhost:3000/cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ productId: id }),
+        body: JSON.stringify(dataToAdd),
       });
+  
       console.log("Added to cart");
     } catch (error) {
       console.error("Error adding to cart:", error);
     }
   };
+  
   return (
     <Card className="product-card">
   <CardHeader className="product-header">

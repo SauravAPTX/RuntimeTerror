@@ -13,18 +13,30 @@ export const SingleProduct = (props) => {
     const handleAddToCart = async (event) => {
       event.preventDefault();
       try {
+        const dataToAdd = {
+          productId: id,
+          title: title,
+          price: price,
+          description: description,
+          category: category,
+          image: image,
+          rating: rating
+        };
+    
         await fetch("http://localhost:3000/cart", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ productId: id }),
+          body: JSON.stringify(dataToAdd),
         });
+    
         console.log("Added to cart");
       } catch (error) {
         console.error("Error adding to cart:", error);
       }
     };
+    
   return (
     <Card className="py-4" style={{ width: '30%', minWidth: '300px', marginRight: '2%' }}>
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">

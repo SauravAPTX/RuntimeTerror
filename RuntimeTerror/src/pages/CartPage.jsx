@@ -4,23 +4,25 @@ import { useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
-//   const { setCartItemCount } = useCart();
   const navigate = useNavigate();
-    const handleCheckoutClick = () => {
-    navigate('/Payment');
-    };
 
-    useEffect(async () => {
-        try {
-          const response = await fetch('http://localhost:3000/cart');
-          const data = await response.json();
-          
-          setCartItems(data);
-        //   setCartItemCount(data.length);
-        } catch (error) {
-          console.error('Error fetching cart data:', error);
-        }
-      }, []);
+  const handleCheckoutClick = () => {
+    navigate('/Payment');
+  };
+
+  useEffect(() => {
+    async function fetchCartItems() {
+      try {
+        const response = await fetch('http://localhost:3000/cart');
+        const data = await response.json();
+        setCartItems(data);
+      } catch (error) {
+        console.error('Error fetching cart data:', error);
+      }
+    }
+
+    fetchCartItems();
+  }, []);
 
   const handleDelete = (itemId) => {
     fetch(`http://localhost:3000/cart/${itemId}`, {
@@ -29,9 +31,13 @@ const CartPage = () => {
     .then(() => {
       const updatedCartItems = cartItems.filter(item => item.id !== itemId);
       setCartItems(updatedCartItems);
+    })
+    .catch(error => {
+      console.error('Error deleting item:', error);
     });
   };
-  
+
+  const totalCartPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
   return (
     <div className="p-4">
@@ -41,7 +47,7 @@ const CartPage = () => {
           Checkout
         </button>
         <p className="mt-2">
-          Total Price: ${cartItems.reduce((total, item) => total + item.price, 0)}
+          Total Price: ${totalCartPrice}
         </p>
       </div>
     </div>
