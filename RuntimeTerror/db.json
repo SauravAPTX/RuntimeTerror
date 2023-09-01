@@ -662,32 +662,5 @@
     }
   ],
   "users": [],
-  "cart": [
-    {
-      "productId": 4,
-      "title": "girls Coat",
-      "price": 15.99,
-      "description": "The color could be slightly different between on the screen and in practice.cute dresses for babies",
-      "category": "Baby girl clothing",
-      "image": "https://i.pinimg.com/originals/c2/f5/c3/c2f5c31ed613fede06b425775cf51d11.jpg",
-      "rating": {
-        "rate": 2.1,
-        "count": 430
-      },
-      "id": 1
-    },
-    {
-      "productId": 2,
-      "title": "Casual Premium Slim Fit for baby ",
-      "price": 22.3,
-      "description": "Slim-fitting cute style, contrast raglan half sleeve, two-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion ",
-      "category": "Baby girl clothing",
-      "image": "https://i.pinimg.com/736x/9b/6d/26/9b6d26355c3174fac0f33cdd2e9987e3--carters-baby-girls-baby-boys.jpg",
-      "rating": {
-        "rate": 4.1,
-        "count": 259
-      },
-      "id": 2
-    }
-  ]
+  "cart": []
 }
