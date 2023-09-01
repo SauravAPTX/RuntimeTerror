@@ -38,6 +38,7 @@ import "./Carousel.css";
   ];
 
   return (
+    <div className="carousel-container">
     <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
       {list.map((item, index) => (
         <Card shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
@@ -45,7 +46,7 @@ import "./Carousel.css";
             <Image
               shadow="sm"
               radius="lg"
-              width="160px"
+              width="150px"
               height="200px"
               alt={item.title}
               className="w-full object-cover h-[140px]"
@@ -58,6 +59,7 @@ import "./Carousel.css";
           </CardFooter>
         </Card>
       ))}
+    </div>
     </div>
   );
 }
