@@ -9,9 +9,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import './NavbarComponents.css'
 import CarterLogo from './CarterLogo';
 import {Badge} from "@nextui-org/react";
-const NavbarComponent = ({searchbtn}) => {
-    const [sortKey, setSortKey] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
+const NavbarComponent = ({ searchbtn }) => {
+    const [cartItemCount, setCartItemCount] = useState(0);
+    const [cartData, setCartData] = useState([]);
 
   const api = "http://localhost:3000/cart";
   const [products, setProducts] = useState([]);
@@ -21,9 +21,11 @@ const NavbarComponent = ({searchbtn}) => {
       let res = await fetch(api);
       let data = await res.json();
       setProducts(data);
+      setCartItemCount(data.length);
+    setCartData(data);
     }
     fetchProducts();
-  }, [sortKey, selectedCategory]);
+  }, []);
     const [isInvisible, setIsInvisible] = React.useState(false);
     const [search, setSearch] = useState()
     const { loginWithRedirect, logout, user, isAuthenticated} = useAuth0();
@@ -39,7 +41,7 @@ const NavbarComponent = ({searchbtn}) => {
                 <CarterLogo/>
             </div>
             <div className='search_box'>
-                <input type='text' value={search} placeholder='Search Your Product...' autoComplete='off' onChange={(e) => setSearch(e.target.value)}></input>
+                <input type='text' value={search} placeholder='Search Your Product...' autoComplete='on' onChange={(e) => setSearch(e.target.value)}></input>
                 <button onClick={() => searchbtn (search)}>Search</button>
             </div>
             <div className='icon'>
@@ -56,11 +58,12 @@ const NavbarComponent = ({searchbtn}) => {
                 }
                 <div className='second_icon'>
                 <Link to="/Wishlist" className='link'><AiOutlineHeart /></Link>
-                <Link to="/Cart" className='link'>
-                <Badge color="danger" content={products.length} isInvisible={isInvisible} shape="circle">
-             <BsBagCheck size={20} />
-             </Badge>
-                </Link>
+                <Link to="/Cart" className="link">
+  <Badge color="danger" content={cartItemCount} isInvisible={isInvisible} shape="circle">
+    <BsBagCheck size={20} />
+  </Badge>
+</Link>
+
                 </div>
             </div>
         </div>
@@ -79,7 +82,7 @@ const NavbarComponent = ({searchbtn}) => {
                     <Link to='/about'className='link'>About</Link>
                 </li>
                 <li>
-                    <Link to='/contact'className='link'>contact</Link>
+                    <Link to='/Error'className='link'>contact</Link>
                 </li>
             </ul>
             </div>
