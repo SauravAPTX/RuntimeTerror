@@ -4,7 +4,8 @@ const CartItem = ({ item, onDelete }) => {
   return (
     <div className="flex justify-between items-center p-4 border-b">
       <div>
-        <h2 className="font-semibold">{item.name}</h2>
+        <img src={item.image}/>
+        <h2 className="font-semibold">{item.title}</h2>
         <p>Price: ${item.price}</p>
       </div>
       <button
