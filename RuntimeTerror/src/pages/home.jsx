@@ -52,7 +52,7 @@ const people = [
             {people.map((person) => (
               <li key={person.name}>
                 <div className="flex items-center gap-x-6">
-                  <img className="height=10 width=10 rounded-full" src={person.imageUrl} alt="" />
+                  <img width ="1200px" height="500px"className="height=10 width=10 rounded-full" src={person.imageUrl} alt="" />
                 </div>
               </li>
             ))}
